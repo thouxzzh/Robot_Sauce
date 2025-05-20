@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T22:26:05.234346" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Sauce" source="C:\Robot_Sauce">
+<suite id="s1-s1" name="SauceDemoProject" source="C:\Robot_Sauce\SauceDemoProject">
+<suite id="s1-s1-s1" name="TestCases" source="C:\Robot_Sauce\SauceDemoProject\TestCases">
+<suite id="s1-s1-s1-s1" name="LoginTest" source="C:\Robot_Sauce\SauceDemoProject\TestCases\LoginTest.robot">
+<test id="s1-s1-s1-s1-t1" name="Login Test with standard_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:11.534795" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA409400&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.533800" elapsed="0.001141"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.535496" elapsed="0.001053"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.536994" elapsed="0.000595"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.537910" elapsed="0.000567"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.538768" elapsed="0.000480"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.539775" elapsed="0.001108"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:11.542426" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.541637" elapsed="0.000876"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.543197" elapsed="0.004871"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:11.549670" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:11.548622" elapsed="1.915831"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:13.465297" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:13.464868" elapsed="0.583203"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:11.531388" elapsed="2.516949"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:14.051320" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.049753" elapsed="0.269873"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:14.321242" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:14.358150" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.320399" elapsed="0.090433"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:14.412235" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.411482" elapsed="0.135318"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:14.048687" elapsed="0.498352"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Successful Login" owner="LoginResources">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.550294" elapsed="0.008005"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:14.565637" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.558959" elapsed="0.006992"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:14.549308" elapsed="0.016995"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.547324" elapsed="0.019065"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:14.568078" elapsed="2.174954"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:14.566658" elapsed="2.176711"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:11.528750" elapsed="5.214792"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:11.524448" elapsed="5.219487"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Login Test with " line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:16.751677" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA401A90&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.750873" elapsed="0.000900"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.752436" elapsed="0.000509"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.753244" elapsed="0.000428"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.753948" elapsed="0.000397"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.754612" elapsed="0.000380"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.755244" elapsed="0.000382"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:16.756440" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.755909" elapsed="0.000619"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.756795" elapsed="0.000510"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:16.758154" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:16.757617" elapsed="1.466553"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:18.225459" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:18.224698" elapsed="0.914488"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:16.749799" elapsed="2.389659"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:19.142331" level="INFO">Typing text '' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.141092" elapsed="0.130984"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:19.273054" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:19.315486" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.272430" elapsed="0.108565"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:19.382977" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.381490" elapsed="0.106956"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:19.139841" elapsed="0.349026"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Username Required Error" owner="LoginResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.492066" elapsed="0.133914"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:19.660851" level="INFO">Element 'xpath://h3' contains text 'Epic sadface: Username is required'.</msg>
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>Epic sadface: Username is required</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.626417" elapsed="0.034948"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:19.490957" elapsed="0.170987"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.489569" elapsed="0.172729"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:19.665089" elapsed="2.173766"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:19.663338" elapsed="2.175884"/>
+</kw>
+<arg>username=</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:16.748537" elapsed="5.090871"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:16.744997" elapsed="5.094803"/>
+</test>
+<test id="s1-s1-s1-s1-t3" name="Login Test with standard_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:21.846060" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA401950&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.845307" elapsed="0.000851"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.846486" elapsed="0.000512"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.847288" elapsed="0.000429"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.847994" elapsed="0.000439"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.848708" elapsed="0.000422"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.849643" elapsed="0.000807"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:21.851468" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.850822" elapsed="0.000738"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.851842" elapsed="0.000539"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:21.853280" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:21.852761" elapsed="1.436001"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:23.290358" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:23.289523" elapsed="0.601291"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:21.844612" elapsed="2.046416"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:23.893295" level="INFO">Typing text 'standard_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:23.892636" elapsed="0.188927"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:24.083224" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:24.128867" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.082202" elapsed="0.100281"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:24.184549" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.183240" elapsed="0.097361"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:23.891476" elapsed="0.389379"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Password Required Error" owner="LoginResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.282510" elapsed="0.029114"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:24.337984" level="INFO">Element 'xpath://h3' contains text 'Epic sadface: Password is required'.</msg>
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>Epic sadface: Password is required</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.312022" elapsed="0.026290"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:24.281999" elapsed="0.056697"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.281100" elapsed="0.057844"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:24.340937" elapsed="2.163201"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:24.339656" elapsed="2.164848"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=</arg>
+<status status="PASS" start="2025-05-20T22:26:21.843613" elapsed="4.661115"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:21.840554" elapsed="4.664820"/>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Login Test with add" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:26.511645" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA464180&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.510911" elapsed="0.000828"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.512069" elapsed="0.000507"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.512853" elapsed="0.000406"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.513552" elapsed="0.000383"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.514186" elapsed="0.000399"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.514838" elapsed="0.000377"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:26.516040" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.515471" elapsed="0.002014"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.517968" elapsed="0.000831"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:26.519958" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:26.519398" elapsed="1.390972"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:27.911135" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:27.910680" elapsed="0.618834"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:26.510204" elapsed="2.019546"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:28.531267" level="INFO">Typing text 'add' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.530814" elapsed="0.181353"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:28.713292" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:28.761580" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.712587" elapsed="0.109001"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:28.822706" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.821911" elapsed="0.112483"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:28.530040" elapsed="0.404615"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Invalid Credentials Error" owner="LoginResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.936503" elapsed="0.027156"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:28.988823" level="INFO">Element 'xpath://h3' contains text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.964006" elapsed="0.024991"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:28.935928" elapsed="0.053278"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.934925" elapsed="0.054387"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:28.990257" elapsed="2.169371"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:28.989633" elapsed="2.170303"/>
+</kw>
+<arg>username=add</arg>
+<arg>password=980</arg>
+<status status="PASS" start="2025-05-20T22:26:26.508962" elapsed="4.651140"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:26.506296" elapsed="4.654125"/>
+</test>
+<test id="s1-s1-s1-s1-t5" name="Login Test with problem_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:31.166624" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA464050&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.165705" elapsed="0.001052"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.167232" elapsed="0.000519"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.168035" elapsed="0.000457"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.168760" elapsed="0.000401"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.169458" elapsed="0.000608"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.170555" elapsed="0.000737"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:31.172649" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.171800" elapsed="0.000981"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.173163" elapsed="0.000527"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:31.174536" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:31.174020" elapsed="1.376100"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:32.551004" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:32.550492" elapsed="1.029132"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:31.164771" elapsed="2.415053"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:33.582781" level="INFO">Typing text 'problem_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.581816" elapsed="0.147679"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:33.730692" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:33.772404" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.729946" elapsed="0.098450"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:33.829707" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.828751" elapsed="0.130900"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:33.580228" elapsed="0.379783"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Successful Login" owner="LoginResources">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.961757" elapsed="0.007543"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:33.976079" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.969872" elapsed="0.006571"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:33.961272" elapsed="0.015545"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.960299" elapsed="0.016774"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:33.978995" elapsed="2.122302"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:33.977821" elapsed="2.123815"/>
+</kw>
+<arg>username=problem_user</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:31.163388" elapsed="4.938423"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:31.160974" elapsed="4.941164"/>
+</test>
+<test id="s1-s1-s1-s1-t6" name="Login Test with performance_glitch_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:36.107700" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA3F4950&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.106943" elapsed="0.000855"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.108158" elapsed="0.000509"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.108952" elapsed="0.000480"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.109709" elapsed="0.000422"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.110437" elapsed="0.000415"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.111108" elapsed="0.000401"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:36.112396" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.111835" elapsed="0.000649"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.112798" elapsed="0.000495"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:36.114156" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:36.113605" elapsed="1.436846"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:37.551849" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:37.551039" elapsed="0.706520"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:36.106241" elapsed="2.151642"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:38.259575" level="INFO">Typing text 'performance_glitch_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:38.259065" elapsed="0.202935"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:38.463120" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:38.503144" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:38.462398" elapsed="0.112913"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:38.576395" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:38.575676" elapsed="5.129296"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:38.258279" elapsed="5.447174"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Successful Login" owner="LoginResources">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:43.707934" elapsed="0.006848"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:43.721390" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:43.715237" elapsed="0.006414"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:43.707224" elapsed="0.014639"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:43.705862" elapsed="0.016123"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:43.723048" elapsed="2.148073"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:43.722447" elapsed="2.149211"/>
+</kw>
+<arg>username=performance_glitch_user</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:36.105209" elapsed="9.766772"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:36.102772" elapsed="9.769744"/>
+</test>
+<test id="s1-s1-s1-s1-t7" name="Login Test with locked_out_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:45.878276" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA48C270&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.877485" elapsed="0.000888"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.878683" elapsed="0.000505"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.879527" elapsed="0.000488"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.880292" elapsed="0.000486"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.881051" elapsed="0.000406"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.881752" elapsed="0.000400"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:45.883046" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.882418" elapsed="0.000745"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.883478" elapsed="0.000515"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:45.884765" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:45.884286" elapsed="1.440038"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:47.325674" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:47.324874" elapsed="0.664521"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:45.876782" elapsed="2.112932"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:47.992293" level="INFO">Typing text 'locked_out_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:47.991523" elapsed="0.172369"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:48.165182" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:48.205255" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.164393" elapsed="0.109902"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:48.275494" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.274497" elapsed="0.103378"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:47.990268" elapsed="0.387835"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Locked Out User Error" owner="LoginResources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.380970" elapsed="0.028027"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:48.431637" level="INFO">Element 'xpath://h3' contains text 'Epic sadface: Sorry, this user has been locked out.'.</msg>
+<arg>${ERROR_MSG_LOCATOR}</arg>
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.409663" elapsed="0.022297"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:48.379906" elapsed="0.052764"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.378476" elapsed="0.054478"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:48.434730" elapsed="2.156571"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:48.433646" elapsed="2.157995"/>
+</kw>
+<arg>username=locked_out_user</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:45.875789" elapsed="4.716036"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:45.873207" elapsed="4.718985"/>
+</test>
+<test id="s1-s1-s1-s1-t8" name="Login Test with error_user" line="13">
+<kw name="Validate Login">
+<kw name="Open Browser To Login Page" owner="GenericResource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:50.598889" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F1BA48D040&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.598060" elapsed="0.000935"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.599328" elapsed="0.000686"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.600459" elapsed="0.000481"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.601209" elapsed="0.000397"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.601855" elapsed="0.000402"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.602503" elapsed="0.000393"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T22:26:50.603755" level="INFO">${prefs} = {'credentials_enable_service': False, 'profile.password_manager_enabled': False}</msg>
+<var>${prefs}</var>
+<arg>{"credentials_enable_service": False, "profile.password_manager_enabled": False}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.603195" elapsed="0.000645"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.604097" elapsed="0.000481"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:50.605341" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T22:26:50.604870" elapsed="1.450366"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:52.056011" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:52.055553" elapsed="0.092000"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:50.597322" elapsed="1.550548"/>
+</kw>
+<kw name="Fill Login Form" owner="LoginResources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:52.150188" level="INFO">Typing text 'error_user' into text field 'xpath://input[@name='user-name']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:52.149529" elapsed="0.759360"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:52.909834" level="INFO">Typing password into text field 'xpath://input[@name='password']'.</msg>
+<msg time="2025-05-20T22:26:52.949130" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:52.909197" elapsed="0.107749"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:53.017924" level="INFO">Clicking button 'xpath://input[@name='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T22:26:53.017311" elapsed="0.144662"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-20T22:26:52.148418" elapsed="1.013750"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Validate Successful Login" owner="LoginResources">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-20T22:26:53.164240" elapsed="0.008556"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-20T22:26:53.178982" level="INFO">Current location is 'https://www.saucedemo.com/inventory.html'.</msg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-20T22:26:53.173094" elapsed="0.006059"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:53.163465" elapsed="0.015874"/>
+</kw>
+<arg>'${username}' == ''</arg>
+<arg>Validate Username Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${password}' == ''</arg>
+<arg>Validate Password Required Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'locked_out_user'</arg>
+<arg>Validate Locked Out User Error</arg>
+<arg>ELSE IF</arg>
+<arg>'${username}' == 'standard_user' or '${password}' == 'secret_sauce'</arg>
+<arg>Validate Successful Login</arg>
+<arg>ELSE</arg>
+<arg>Validate Invalid Credentials Error</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T22:26:53.162430" elapsed="0.017044"/>
+</kw>
+<kw name="Close Browser Session" owner="GenericResource">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T22:26:53.180520" elapsed="2.121785"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:53.179817" elapsed="2.122799"/>
+</kw>
+<arg>username=error_user</arg>
+<arg>password=secret_sauce</arg>
+<status status="PASS" start="2025-05-20T22:26:50.596283" elapsed="4.706624"/>
+</kw>
+<status status="PASS" start="2025-05-20T22:26:50.593111" elapsed="4.710146"/>
+</test>
+<status status="PASS" start="2025-05-20T22:26:05.288471" elapsed="50.015579"/>
+</suite>
+<status status="PASS" start="2025-05-20T22:26:05.287028" elapsed="50.019300"/>
+</suite>
+<status status="PASS" start="2025-05-20T22:26:05.285089" elapsed="50.022752"/>
+</suite>
+<status status="PASS" start="2025-05-20T22:26:05.262040" elapsed="50.046912"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Sauce" id="s1" pass="8" fail="0" skip="0">Robot Sauce</stat>
+<stat name="SauceDemoProject" id="s1-s1" pass="8" fail="0" skip="0">Robot Sauce.SauceDemoProject</stat>
+<stat name="TestCases" id="s1-s1-s1" pass="8" fail="0" skip="0">Robot Sauce.SauceDemoProject.TestCases</stat>
+<stat name="LoginTest" id="s1-s1-s1-s1" pass="8" fail="0" skip="0">Robot Sauce.SauceDemoProject.TestCases.LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-20T22:26:21.840862" level="WARN">Multiple tests with name 'Login Test with standard_user' executed in suite 'Robot Sauce.SauceDemoProject.TestCases.LoginTest'.</msg>
+</errors>
+</robot>

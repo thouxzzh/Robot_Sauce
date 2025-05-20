@@ -1,0 +1,26 @@
+==============================================================================
+Robot Sauce                                                                   
+==============================================================================
+Robot Sauce.SauceDemoProject                                                  
+==============================================================================
+Robot Sauce.SauceDemoProject.TestCases                                        
+==============================================================================
+Robot Sauce.SauceDemoProject.TestCases.ProductTest                            
+==============================================================================
+Add Multiple Items To Cart                                            Item found in cart: Sauce Labs Backpack
+Item found in cart: Sauce Labs Bolt T-Shirt
+| PASS |
+------------------------------------------------------------------------------
+Robot Sauce.SauceDemoProject.TestCases.ProductTest                    | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Robot Sauce.SauceDemoProject.TestCases                                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Robot Sauce.SauceDemoProject                                          | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Robot Sauce                                                           | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Robot_Sauce\pabot_results\2\output.xml
