@@ -9,8 +9,12 @@ Test Template     Validate Login
 ${username}
 ${password}
 
+# *** Test Cases ***
+# Login Test with ${username}    ${password}
+
 *** Test Cases ***
-Login Test with ${username}    ${password}
+Login Test ${username}-${password}    ${username}    ${password}
+
 
 *** Keywords ***
 Validate Login
